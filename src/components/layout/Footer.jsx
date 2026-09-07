@@ -62,7 +62,7 @@ export default function Footer() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-accent hover:text-accent transition-all"
+              className="w-10 h-10 border border-gray-200 flex items-center justify-center text-gray-600 hover:border-accent hover:text-accent transition-all"
               aria-label={label}
             >
               <Icon size={16} />
@@ -86,7 +86,7 @@ export default function Footer() {
         </nav>
 
         {/* Contacto — PLACEHOLDER: reemplazar teléfono/dirección por los reales de Ampaz Studio. */}
-        <div className="rounded-2xl bg-aux px-6 py-4 mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+        <div className="bg-aux px-6 py-4 mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
           <a
             href="https://wa.me/573000000000"
             target="_blank"

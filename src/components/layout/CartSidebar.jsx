@@ -44,7 +44,7 @@ export default function CartSidebar({ onClose }) {
       )}
       {freeShip.alcanzado && (
         <div className="px-3 py-2 bg-accent border-b border-accent-dark flex-shrink-0 text-center">
-          <p className="text-xs font-bold text-black">🎉 ¡Envío gratis desbloqueado!</p>
+          <p className="text-xs font-bold text-black">¡Envío gratis desbloqueado!</p>
         </div>
       )}
 

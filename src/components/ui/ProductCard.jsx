@@ -7,10 +7,10 @@ import { useInViewOnce } from '../../hooks/useInViewOnce'
 
 // ══════════════════════════════════════════════════════════════════════════
 // Versión alterna de la tarjeta de producto: mismos datos/props y misma
-// lógica (favoritos, stock, oferta, rating), pero con otra forma — esquinas
-// redondeadas, badges en píldora, botón de favorito circular con borde, y el
-// precio + nombre centrados debajo de la imagen en vez del bloque alineado
-// a la izquierda de antes.
+// lógica (favoritos, stock, oferta, rating), pero con otra forma — el badge
+// de descuento/nuevo se unifica en uno solo, el botón de favorito lleva
+// borde propio, y el texto queda centrado debajo de la imagen en vez de
+// alineado a la izquierda como antes.
 // ══════════════════════════════════════════════════════════════════════════
 export default function ProductCard({ product }) {
   const { id, nombre, marca, imagenes, precio, precioFinal, descuento, etiquetas, tallas, ratingPromedio, totalResenas } = product
@@ -39,12 +39,12 @@ export default function ProductCard({ product }) {
     <Link
       ref={inViewRef}
       to={`/producto/${id}`}
-      className={`group block rounded-2xl bg-white border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-[box-shadow,opacity,transform] duration-500 ease-out ${
+      className={`group block bg-white border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-[box-shadow,opacity,transform] duration-500 ease-out ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
     >
       {/* Imagen */}
-      <div className="relative aspect-square bg-gray-50 overflow-hidden rounded-t-2xl">
+      <div className="relative aspect-square bg-gray-50 overflow-hidden">
         <img
           src={imagenes?.[0]?.url ?? imagenes?.[0] ?? 'https://placehold.co/300x300/f5f5f5/999?text=Ampaz+Studio'}
           alt={nombre}
@@ -53,7 +53,7 @@ export default function ProductCard({ product }) {
         />
 
         {(descuento > 0 || isNew) && (
-          <span className={`absolute top-2.5 left-2.5 rounded-full text-white text-[10px] font-bold px-2.5 py-1 shadow-sm ${
+          <span className={`absolute top-2.5 left-2.5 text-white text-[10px] font-bold px-2 py-1 ${
             descuento > 0 ? 'bg-red-600' : 'bg-accent'
           }`}>
             {descuento > 0 ? `-${descuento}%` : 'Nuevo'}
@@ -63,25 +63,14 @@ export default function ProductCard({ product }) {
         <button
           onClick={handleFavorito}
           aria-label={favorito ? 'Quitar de favoritos' : 'Agregar a favoritos'}
-          className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center shadow-sm hover:scale-110 transition-transform"
+          className="absolute top-2.5 right-2.5 w-8 h-8 bg-white border border-gray-100 flex items-center justify-center shadow-sm hover:scale-110 transition-transform"
         >
           <Heart size={13} className={favorito ? 'text-accent fill-accent' : 'text-gray-400'} />
         </button>
 
-        {/* Precio en overlay al pasar el mouse (desktop) */}
-        <div className="hidden sm:flex absolute inset-x-2.5 bottom-2.5 items-center justify-between rounded-full bg-white/95 backdrop-blur-sm px-3 py-1.5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 shadow-sm">
-          <span className="text-xs font-black text-black truncate">{fmt(finalPrice)}</span>
-          {tieneResenas && (
-            <span className="flex items-center gap-0.5 flex-shrink-0 ml-2">
-              <Star size={10} className="text-amber-400 fill-amber-400" />
-              <span className="text-[10px] text-gray-500">{ratingPromedio?.toFixed(1)}</span>
-            </span>
-          )}
-        </div>
-
         {!hasStock && (
           <div className="absolute inset-0 bg-white/70 flex items-center justify-center">
-            <span className="text-xs font-bold text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200">
+            <span className="text-xs font-bold text-gray-500 bg-white px-3 py-1 border border-gray-200">
               Agotado
             </span>
           </div>

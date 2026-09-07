@@ -73,7 +73,6 @@ export default function LeftSidebar({ onClose }) {
           onClick={onClose}
           className={`left-nav-item ${!activeCatId && isCatalog ? 'left-nav-item-active' : ''}`}
         >
-          <span className="text-base">🏬</span>
           <span>Todo el catálogo</span>
         </Link>
 

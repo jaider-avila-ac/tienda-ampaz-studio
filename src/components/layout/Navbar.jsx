@@ -9,10 +9,9 @@ import CategoryDrawer from './CategoryDrawer'
 // ══════════════════════════════════════════════════════════════════════════
 // Versión alterna del header: misma data/funciones que la original (mismo
 // estado de búsqueda, mismos conteos de carrito/notificaciones, mismos
-// links), pero con otra forma — franja superior, logo centrado y una fila
-// de búsqueda propia, en vez de barra única con logo a la izquierda.
-// Alto total unificado (140px) para mobile y desktop, a diferencia del
-// diseño anterior que usaba dos alturas distintas — ver StoreLayout.jsx.
+// links), pero con otra forma — logo centrado y una fila de búsqueda propia,
+// en vez de barra única con logo a la izquierda. Alto total unificado
+// (112px) para mobile y desktop — ver StoreLayout.jsx.
 // ══════════════════════════════════════════════════════════════════════════
 export default function Navbar() {
   const { count } = useCart()
@@ -36,20 +35,13 @@ export default function Navbar() {
     <>
       <div className="fixed top-0 left-0 right-0 z-50">
 
-        {/* Franja superior */}
-        <div className="h-7 bg-accent flex items-center justify-center px-3">
-          <p className="text-white text-[11px] font-medium tracking-wide truncate">
-            Envíos a todo Colombia · Cambios sin costo
-          </p>
-        </div>
-
         {/* Fila principal — hamburguesa | logo centrado | iconos */}
         <div className="h-16 bg-white border-b border-gray-100">
           <div className="h-full max-w-7xl mx-auto px-4 lg:px-6 grid grid-cols-[auto_1fr_auto] items-center gap-2">
 
             <button
               onClick={() => setDrawerOpen((v) => !v)}
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors flex-shrink-0 ${
+              className={`w-10 h-10 flex items-center justify-center transition-colors flex-shrink-0 ${
                 drawerOpen ? 'bg-accent text-white' : 'text-black hover:bg-aux'
               }`}
               aria-label="Menú"
@@ -64,12 +56,12 @@ export default function Navbar() {
             <div className="flex items-center gap-0.5 sm:gap-1 justify-self-end">
               <Link
                 to="/notificaciones"
-                className="relative w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
+                className="relative w-10 h-10 flex items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
                 aria-label="Notificaciones"
               >
                 <Bell size={18} />
                 {unreadCount > 0 && (
-                  <span className="absolute top-1 right-1 min-w-[15px] h-[15px] rounded-full bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border-2 border-white">
+                  <span className="absolute top-1 right-1 min-w-[15px] h-[15px] bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border-2 border-white">
                     {unreadCount > 9 ? '9+' : unreadCount}
                   </span>
                 )}
@@ -77,7 +69,7 @@ export default function Navbar() {
 
               <Link
                 to={isAuthenticated ? '/configuracion' : '/login'}
-                className="hidden sm:flex w-10 h-10 rounded-full items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
+                className="hidden sm:flex w-10 h-10 items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
                 aria-label={isAuthenticated ? fullName || firstName : 'Iniciar sesión'}
                 title={isAuthenticated ? fullName || firstName : 'Iniciar sesión'}
               >
@@ -86,11 +78,11 @@ export default function Navbar() {
 
               <Link
                 to="/carrito"
-                className="relative w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
+                className="relative w-10 h-10 flex items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
               >
                 <ShoppingCart size={19} />
                 {count > 0 && (
-                  <span className="absolute top-1 right-1 min-w-[15px] h-[15px] rounded-full bg-accent text-white text-[9px] font-black flex items-center justify-center px-0.5 border-2 border-white">
+                  <span className="absolute top-1 right-1 min-w-[15px] h-[15px] bg-accent text-white text-[9px] font-black flex items-center justify-center px-0.5 border-2 border-white">
                     {count}
                   </span>
                 )}
@@ -107,12 +99,12 @@ export default function Navbar() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Buscar productos, marcas, categorías..."
-              className="w-full h-9 rounded-full bg-white border border-gray-200 pl-4 pr-11 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-accent transition"
+              className="w-full h-9 bg-white border border-gray-200 pl-4 pr-11 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-accent transition"
             />
             <button
               type="submit"
               aria-label="Buscar"
-              className="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full flex items-center justify-center text-white bg-accent hover:bg-accent-dark transition-colors"
+              className="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center text-white bg-accent hover:bg-accent-dark transition-colors"
             >
               <Search size={13} />
             </button>

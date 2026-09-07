@@ -1,15 +1,5 @@
 import { fetchPublic } from './api'
 
-// Mapa local de emojis por slug (no existe en la DB)
-const EMOJI_MAP = {
-  mujer:       '👠',
-  hombre:      '👞',
-  ninos:       '👟',
-  ropa:        '👗',
-  sandalias:   '🩴',
-  accesorios:  '👜',
-}
-
 function adaptCategory(c) {
   return {
     id:           c.id,
@@ -17,7 +7,6 @@ function adaptCategory(c) {
     slug:         c.slug,
     imagenUrl:    c.imagen_url,
     subcategorias: c.subcategorias ?? [],
-    emoji:        EMOJI_MAP[c.slug] ?? '🛍️',
   }
 }
 
