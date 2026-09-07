@@ -43,7 +43,7 @@ export default function ResetPasswordPage() {
             <p className="text-sm text-gray-500">Ya puedes iniciar sesión con tu nueva contraseña.</p>
             <button
               onClick={() => navigate('/login')}
-              className="w-full h-[54px] bg-black text-white text-base font-bold hover:bg-gray-800 transition-colors"
+              className="w-full h-[54px] bg-accent text-white text-base font-bold hover:bg-accent-dark transition-colors"
             >
               Iniciar sesión
             </button>
@@ -68,7 +68,7 @@ export default function ResetPasswordPage() {
                   type="text" required value={code} onChange={(e) => setCode(e.target.value)}
                   placeholder="123456"
                   maxLength={6}
-                  className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                  className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
                 />
               </div>
               <div>
@@ -81,7 +81,7 @@ export default function ResetPasswordPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Mínimo 6 caracteres"
                     minLength={6}
-                    className="w-full px-4 py-3 pr-12 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                    className="w-full px-4 py-3 pr-12 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
                   />
                   <button
                     type="button" onClick={() => setShowPass((v) => !v)}
@@ -93,7 +93,7 @@ export default function ResetPasswordPage() {
               </div>
               <button
                 type="submit" disabled={loading}
-                className="w-full h-[54px] bg-black text-white text-base font-bold hover:bg-gray-800 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+                className="w-full h-[54px] bg-accent text-white text-base font-bold hover:bg-accent-dark transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
               >
                 {loading ? <><Loader2 size={16} className="animate-spin" />Guardando…</> : 'Guardar contraseña'}
               </button>

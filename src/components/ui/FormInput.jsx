@@ -1,6 +1,6 @@
 export const inputBase =
   'w-full border border-gray-200 px-4 py-2.5 text-sm font-medium text-black ' +
-  'placeholder-gray-300 focus:outline-none focus:border-black transition-colors'
+  'placeholder-gray-300 focus:outline-none focus:border-accent transition-colors'
 
 const inputBaseDark =
   'w-full h-[58px] border border-[#2f2f2f] pl-4 bg-[#1a1a1a] ' +

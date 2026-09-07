@@ -6,7 +6,7 @@ export default function PromoBanner() {
     <section className="container-main py-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Promo principal */}
-        <div className="relative overflow-hidden bg-black min-h-48 flex items-center p-8">
+        <div className="relative overflow-hidden bg-accent min-h-48 flex items-center p-8">
           <img
             src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
             alt="Oferta"

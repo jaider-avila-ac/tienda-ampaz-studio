@@ -46,7 +46,7 @@ function MarcasPanel({ marcas: disponibles, seleccionadas, onToggle, onClear }) 
                 <label className="flex items-center justify-between gap-2 py-1.5 cursor-pointer group">
                   <div className="flex items-center gap-2.5 min-w-0">
                     <div className={`w-4 h-4 flex-shrink-0 border-2 flex items-center justify-center transition-colors ${
-                      checked ? 'bg-black border-black' : 'border-gray-300 group-hover:border-gray-500'
+                      checked ? 'bg-accent border-accent' : 'border-gray-300 group-hover:border-gray-500'
                     }`}>
                       {checked && (
                         <svg width="8" height="6" viewBox="0 0 8 6" fill="none">
@@ -185,7 +185,7 @@ export default function SearchPage() {
                     key={key}
                     onClick={() => toggleMarca(key)}
                     className={`flex-shrink-0 px-3 py-1.5 text-xs font-semibold border transition-all ${
-                      active ? 'bg-black text-white border-black' : 'border-gray-200 text-gray-600 hover:border-black'
+                      active ? 'bg-accent text-white border-accent' : 'border-gray-200 text-gray-600 hover:border-accent'
                     }`}
                   >
                     {nombre} <span className="opacity-60">({count})</span>
@@ -213,7 +213,7 @@ export default function SearchPage() {
               <select
                 value={sort}
                 onChange={(e) => setParam('sort', e.target.value)}
-                className="appearance-none bg-white border border-gray-200 pl-3 pr-8 py-1.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black cursor-pointer"
+                className="appearance-none bg-white border border-gray-200 pl-3 pr-8 py-1.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-accent cursor-pointer"
               >
                 {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
               </select>

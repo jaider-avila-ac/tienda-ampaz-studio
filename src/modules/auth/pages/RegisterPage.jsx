@@ -229,7 +229,7 @@ export default function RegisterPage() {
                 <input
                   type="text" required value={nombre} onChange={(e) => setNombre(e.target.value)}
                   placeholder="Juan"
-                  className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                  className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
                 />
               </div>
               <div>
@@ -237,7 +237,7 @@ export default function RegisterPage() {
                 <input
                   type="text" value={apellido} onChange={(e) => setApellido(e.target.value)}
                   placeholder="Pérez"
-                  className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                  className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
                 />
               </div>
             </div>
@@ -248,7 +248,7 @@ export default function RegisterPage() {
               <input
                 type="text" value={numeroDocumento} onChange={(e) => setNumeroDocumento(e.target.value)}
                 placeholder="Si compraste antes en tienda física, úsala para ver tu historial"
-                className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
               />
             </div>
             <div>
@@ -256,7 +256,7 @@ export default function RegisterPage() {
               <input
                 type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
                 placeholder="tu@correo.com"
-                className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
               />
             </div>
             <div>
@@ -267,7 +267,7 @@ export default function RegisterPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Mínimo 6 caracteres"
                   minLength={6}
-                  className="w-full px-4 py-3 pr-12 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                  className="w-full px-4 py-3 pr-12 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
                 />
                 <button
                   type="button" onClick={() => setShowPass((v) => !v)}
@@ -285,7 +285,7 @@ export default function RegisterPage() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Escribe la contrasena otra vez"
                   minLength={6}
-                  className="w-full px-4 py-3 pr-12 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                  className="w-full px-4 py-3 pr-12 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
                 />
                 <button
                   type="button" onClick={() => setShowPass((v) => !v)}
@@ -324,7 +324,7 @@ export default function RegisterPage() {
 
             <button
               type="submit" disabled={loading || !canSubmit}
-              className="w-full h-[54px] bg-black text-white text-base font-bold hover:bg-gray-800 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+              className="w-full h-[54px] bg-accent text-white text-base font-bold hover:bg-accent-dark transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
             >
               {loading ? <><Loader2 size={16} className="animate-spin" />Registrando…</> : 'Crear cuenta'}
             </button>

@@ -118,14 +118,14 @@ export default function VerifyPage() {
                 value={d}
                 onChange={(e) => handleChange(i, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(i, e)}
-                className="w-12 h-14 text-center text-2xl font-black border-2 border-gray-200 focus:outline-none focus:border-black transition-colors"
+                className="w-12 h-14 text-center text-2xl font-black border-2 border-gray-200 focus:outline-none focus:border-accent transition-colors"
               />
             ))}
           </div>
 
           <button
             type="submit" disabled={loading || code.length < 6}
-            className="w-full h-[54px] bg-black text-white text-base font-bold hover:bg-gray-800 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+            className="w-full h-[54px] bg-accent text-white text-base font-bold hover:bg-accent-dark transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
           >
             {loading ? <><Loader2 size={16} className="animate-spin" />Verificando…</> : 'Verificar'}
           </button>

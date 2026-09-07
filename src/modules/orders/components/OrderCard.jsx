@@ -139,7 +139,7 @@ export default function OrderCard({ order }) {
               href={order.linkSeguimiento}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-black border border-gray-200 px-3 py-1.5 hover:border-black transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-black border border-gray-200 px-3 py-1.5 hover:border-accent transition-colors"
             >
               <Truck size={13} /> Rastrear pedido
             </a>
@@ -150,7 +150,7 @@ export default function OrderCard({ order }) {
               type="button"
               onClick={handleConfirmarRecibido}
               disabled={confirmando}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-black px-3 py-1.5 hover:bg-gray-800 transition-colors disabled:opacity-60"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-accent px-3 py-1.5 hover:bg-accent-dark transition-colors disabled:opacity-60"
             >
               {confirmando
                 ? <><Loader2 size={13} className="animate-spin" /> Confirmando…</>

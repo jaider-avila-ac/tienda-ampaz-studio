@@ -52,7 +52,7 @@ export default function ProductCard({ product }) {
         )}
 
         {isNew && !descuento && (
-          <span className="absolute top-2 left-2 bg-black text-accent text-[10px] font-bold px-1.5 py-0.5 ">
+          <span className="absolute top-2 left-2 bg-accent text-white text-[10px] font-bold px-1.5 py-0.5 ">
             NUEVO
           </span>
         )}

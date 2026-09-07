@@ -44,7 +44,7 @@ function SaveButton({ saved, saving }) {
       type="submit"
       disabled={saving}
       className={`flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition-all active:scale-95 ${
-        saved ? 'bg-accent-dark text-white' : 'bg-black text-white hover:bg-gray-800'
+        saved ? 'bg-accent-dark text-white' : 'bg-accent text-white hover:bg-accent-dark'
       } disabled:opacity-60 disabled:cursor-not-allowed`}
     >
       {saving ? 'Guardando...' : saved ? <><Check size={15} /> Guardado</> : 'Guardar cambios'}
@@ -224,7 +224,7 @@ function DireccionForm({ inicial = ADDR_EMPTY, onSave, onCancel }) {
         <button
           type="submit"
           disabled={saving}
-          className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold bg-black text-white hover:bg-gray-800 transition-colors active:scale-95 disabled:opacity-60"
+          className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold bg-accent text-white hover:bg-accent-dark transition-colors active:scale-95 disabled:opacity-60"
         >
           <Check size={15} /> {saving ? 'Guardando...' : 'Guardar dirección'}
         </button>
@@ -477,7 +477,7 @@ function CerrarSesionSection() {
         type="button"
         onClick={handleLogout}
         disabled={loggingOut}
-        className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold border border-gray-200 text-black hover:border-black transition-colors active:scale-95 disabled:opacity-60"
+        className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold border border-gray-200 text-black hover:border-accent transition-colors active:scale-95 disabled:opacity-60"
       >
         <LogOut size={15} /> {loggingOut ? 'Cerrando sesión...' : 'Cerrar sesión'}
       </button>

@@ -22,7 +22,7 @@ export default function CollectionsGrid() {
           <Link
             key={col.id}
             to={`/catalogo?coleccion=${col.id}`}
-            className="relative overflow-hidden bg-black aspect-[16/7] flex items-center p-6 group"
+            className="relative overflow-hidden bg-accent aspect-[16/7] flex items-center p-6 group"
           >
             {col.imagenUrl && (
               <img

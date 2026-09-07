@@ -57,7 +57,7 @@ export default function NotificationItem({ notif, onMarkRead, onDelete }) {
     }`}>
 
       <div className={`w-9 h-9 flex items-center justify-center flex-shrink-0 mt-0.5 ${
-        notif.leida ? 'bg-gray-100' : 'bg-black'
+        notif.leida ? 'bg-gray-100' : 'bg-accent'
       }`}>
         <Icon size={16} className={notif.leida ? 'text-gray-400' : 'text-white'} />
       </div>
@@ -83,7 +83,7 @@ export default function NotificationItem({ notif, onMarkRead, onDelete }) {
       </div>
 
       {!notif.leida && (
-        <span className="w-2 h-2 bg-black flex-shrink-0 mt-2" />
+        <span className="w-2 h-2 bg-accent flex-shrink-0 mt-2" />
       )}
 
       <button

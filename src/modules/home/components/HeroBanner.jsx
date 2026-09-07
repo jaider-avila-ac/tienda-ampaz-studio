@@ -29,7 +29,7 @@ export default function HeroBanner() {
   return (
     <>
       {/* Main hero */}
-      <section className="relative bg-black overflow-hidden min-h-[80vh] md:min-h-[85vh] flex items-center">
+      <section className="relative bg-accent overflow-hidden min-h-[80vh] md:min-h-[85vh] flex items-center">
         {/* Background image */}
         <div className="absolute inset-0">
           <img
@@ -43,7 +43,7 @@ export default function HeroBanner() {
         <div className="container-main relative z-10 py-16 md:py-24">
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 bg-accent text-white text-xs font-bold px-3 py-1.5 mb-6">
-              <span className="w-1.5 h-1.5 bg-black animate-pulse" />
+              <span className="w-1.5 h-1.5 bg-accent animate-pulse" />
               Nueva colección 2025
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight">

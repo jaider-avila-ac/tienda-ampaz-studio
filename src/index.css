@@ -49,13 +49,13 @@
 @layer components {
   /* ── Botones ─────────────────────────── */
   .btn-primary {
-    @apply bg-black text-white px-5 py-2.5 font-semibold text-sm
-           hover:bg-gray-800 transition-all duration-200
+    @apply bg-accent text-white px-5 py-2.5 font-semibold text-sm
+           hover:bg-accent-dark transition-all duration-200
            flex items-center justify-center gap-2 active:scale-95;
   }
   .btn-secondary {
-    @apply bg-white text-black border-2 border-black px-5 py-2.5 font-semibold text-sm
-           hover:bg-black hover:text-white transition-all duration-200
+    @apply bg-white text-accent border-2 border-accent px-5 py-2.5 font-semibold text-sm
+           hover:bg-accent hover:text-white transition-all duration-200
            flex items-center justify-center gap-2 active:scale-95;
   }
   .btn-lime {
@@ -83,16 +83,16 @@
   /* ── Badges ──────────────────────────── */
   .badge-new { @apply text-white text-xs font-bold px-2 py-0.5 ; background-color: theme('colors.accent'); }
   .badge-sale { @apply bg-red-600 text-white text-xs font-bold px-2 py-0.5 ; }
-  .badge-hot { @apply bg-black text-white text-xs font-bold px-2 py-0.5 ; }
+  .badge-hot { @apply bg-accent-dark text-white text-xs font-bold px-2 py-0.5 ; }
 
   /* ── Selector de talla ───────────────── */
-  .size-btn { @apply h-8 min-w-8 px-1.5 border-2 border-gray-200 text-xs font-semibold transition-all hover:border-black; }
-  .size-btn-active { @apply border-black bg-black text-white; }
+  .size-btn { @apply h-8 min-w-8 px-1.5 border-2 border-gray-200 text-xs font-semibold transition-all hover:border-accent; }
+  .size-btn-active { @apply border-accent bg-accent text-white; }
   .size-btn-disabled { @apply border-gray-100 text-gray-300 cursor-not-allowed line-through; }
 
   /* ── Punto de color ──────────────────── */
   .color-dot { @apply w-6 h-6 border-2 border-gray-200 cursor-pointer transition-all hover:scale-110; }
-  .color-dot-active { @apply border-black scale-110 ring-2 ring-black ring-offset-2; }
+  .color-dot-active { @apply border-accent scale-110 ring-2 ring-accent ring-offset-2; }
   .color-dot-disabled { @apply opacity-25 cursor-not-allowed hover:scale-100; }
 
   /* ── Nav izquierdo ───────────────────── */
@@ -102,7 +102,7 @@
            hover:bg-gray-100 hover:text-black;
   }
   .left-nav-item-active {
-    @apply bg-black text-white hover:bg-gray-900;
+    @apply bg-accent text-white hover:bg-accent-dark;
   }
   .left-nav-sub {
     @apply flex items-center gap-2 pl-9 pr-3 py-1.5 text-xs font-medium

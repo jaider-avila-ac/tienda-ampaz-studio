@@ -219,7 +219,7 @@ export default function LoginPage() {
                 )}
                 <button
                   onClick={() => setView('email')}
-                  className="w-full h-[54px] border border-gray-200 text-[15px] font-semibold text-black bg-white hover:border-black hover:bg-gray-50 transition-colors flex items-center justify-center active:scale-[0.98]"
+                  className="w-full h-[54px] border border-gray-200 text-[15px] font-semibold text-black bg-white hover:border-accent hover:bg-gray-50 transition-colors flex items-center justify-center active:scale-[0.98]"
                 >
                   Continuar con correo
                 </button>
@@ -245,7 +245,7 @@ export default function LoginPage() {
                     type="email" required value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="correo@ejemplo.com"
-                    className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                    className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
                   />
                 </div>
                 <div>
@@ -266,7 +266,7 @@ export default function LoginPage() {
                       type={showPass ? 'text' : 'password'} required value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="••••••••"
-                      className="w-full px-4 py-3 pr-12 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+                      className="w-full px-4 py-3 pr-12 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
                     />
                     <button
                       type="button"
@@ -279,7 +279,7 @@ export default function LoginPage() {
                 </div>
                 <button
                   type="submit" disabled={loading}
-                  className="w-full h-[54px] bg-black text-white text-base font-bold hover:bg-gray-800 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="w-full h-[54px] bg-accent text-white text-base font-bold hover:bg-accent-dark transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
                 >
                   {loading ? <><Loader2 size={16} className="animate-spin" />Ingresando…</> : 'Ingresar'}
                 </button>
@@ -336,7 +336,7 @@ function ForgotInline({ onBack }) {
         </p>
         <button
           onClick={() => navigate('/restablecer')}
-          className="w-full h-[54px] bg-black text-white text-base font-bold hover:bg-gray-800 transition-colors"
+          className="w-full h-[54px] bg-accent text-white text-base font-bold hover:bg-accent-dark transition-colors"
         >
           Ingresar código
         </button>
@@ -361,11 +361,11 @@ function ForgotInline({ onBack }) {
           type="email" required value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="tu@correo.com"
-          className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-black transition-colors"
+          className="w-full px-4 py-3 border border-gray-200 text-sm focus:outline-none focus:border-accent transition-colors"
         />
         <button
           type="submit" disabled={loading}
-          className="w-full h-[54px] bg-black text-white text-base font-bold hover:bg-gray-800 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+          className="w-full h-[54px] bg-accent text-white text-base font-bold hover:bg-accent-dark transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
         >
           {loading ? <><Loader2 size={16} className="animate-spin" />Enviando…</> : 'Enviar código'}
         </button>

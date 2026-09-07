@@ -109,7 +109,7 @@ export default function LeftSidebar({ onClose }) {
                   }}
                   className={`left-nav-sub w-full text-left ${activeSub === sub ? 'left-nav-sub-active' : ''}`}
                 >
-                  {activeSub === sub && <span className="w-1 h-1 bg-black inline-block mr-1" />}
+                  {activeSub === sub && <span className="w-1 h-1 bg-accent inline-block mr-1" />}
                   {sub}
                 </button>
               ))}
@@ -134,8 +134,8 @@ export default function LeftSidebar({ onClose }) {
                   onClick={() => setFilter('genero', activeGen === g.value ? '' : g.value)}
                   className={`text-xs px-2.5 py-1 border font-medium transition-all ${
                     activeGen === g.value
-                      ? 'bg-black text-white border-black'
-                      : 'border-gray-200 text-gray-600 hover:border-black'
+                      ? 'bg-accent text-white border-accent'
+                      : 'border-gray-200 text-gray-600 hover:border-accent'
                   }`}
                 >
                   {g.label}

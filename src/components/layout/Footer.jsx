@@ -20,15 +20,15 @@ function IconTikTok({ size = 17 }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white mt-16">
+    <footer className="bg-white text-black border-t border-gray-100 mt-16">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-8" />
+              <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-8" style={{ filter: 'invert(1)' }} />
             </div>
-            <p className="text-white text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed">
               {/* PLACEHOLDER: describe acá a qué se dedica Ampaz Studio. */}
               Ampaz Studio.
             </p>
@@ -40,7 +40,7 @@ export default function Footer() {
                 { icon: IconTikTok, href: 'https://www.tiktok.com/', label: 'TikTok' },
                 { icon: IconWhatsApp, href: 'https://wa.me/573000000000', label: 'WhatsApp' },
               ].map(({ icon: Icon, href, label }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center text-white hover:bg-white/10 transition-all" aria-label={label}>
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center text-gray-600 hover:bg-gray-50 hover:text-accent transition-all" aria-label={label}>
                   <Icon size={17} />
                 </a>
               ))}
@@ -50,7 +50,7 @@ export default function Footer() {
           {/* Info — PLACEHOLDER: estas páginas no existen todavía, apuntan al dominio real de
               Ampaz Studio a futuro (mismo patrón que calzacaribe.com/terminos etc.) */}
           <div>
-            <h3 className="font-bold text-sm uppercase tracking-wider text-white mb-4">Información</h3>
+            <h3 className="font-bold text-sm uppercase tracking-wider text-black mb-4">Información</h3>
             <ul className="space-y-2">
               {[
                 { label: 'Política de cambios', href: 'https://www.ampazstudio.com/cambios' },
@@ -60,7 +60,7 @@ export default function Footer() {
                 { label: 'Preguntas frecuentes', href: 'https://www.ampazstudio.com/faq' },
               ].map(({ label, href }) => (
                 <li key={href}>
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-white hover:underline transition-colors">
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-accent transition-colors">
                     {label}
                   </a>
                 </li>
@@ -70,41 +70,41 @@ export default function Footer() {
 
           {/* Contacto — PLACEHOLDER: reemplazar teléfono/dirección por los reales de Ampaz Studio. */}
           <div>
-            <h3 className="font-bold text-sm uppercase tracking-wider text-white mb-4">Contacto</h3>
+            <h3 className="font-bold text-sm uppercase tracking-wider text-black mb-4">Contacto</h3>
             <div className="space-y-4">
               <div>
                 <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-white hover:underline transition-colors">
-                  <Phone size={14} className="text-white flex-shrink-0" />300 000 0000
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-accent transition-colors">
+                  <Phone size={14} className="text-gray-500 flex-shrink-0" />300 000 0000
                 </a>
-                <p className="flex items-start gap-2 text-sm text-white mt-1.5">
-                  <MapPin size={14} className="text-white flex-shrink-0 mt-0.5" />
+                <p className="flex items-start gap-2 text-sm text-gray-600 mt-1.5">
+                  <MapPin size={14} className="text-gray-500 flex-shrink-0 mt-0.5" />
                   <span>Dirección pendiente</span>
                 </p>
               </div>
             </div>
-            <div className="mt-5 p-3">
-              <p className="text-xs text-white">Horario de atención</p>
-              <p className="text-sm font-semibold text-white mt-0.5">Lun–Sáb 8am–6pm</p>
+            <div className="mt-5 p-3 bg-aux">
+              <p className="text-xs text-gray-500">Horario de atención</p>
+              <p className="text-sm font-semibold text-black mt-0.5">Lun–Sáb 8am–6pm</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-white">© 2026 Ampaz Studio. Todos los derechos reservados.</p>
-          <p className="text-xs text-white">
+          <p className="text-xs text-gray-500">© 2026 Ampaz Studio. Todos los derechos reservados.</p>
+          <p className="text-xs text-gray-500">
             Desarrollado por{' '}
             <a href="https://brandingcol.com/" target="_blank" rel="noopener noreferrer"
-              className="hover:underline transition-colors">
+              className="hover:text-accent transition-colors">
               BrandingCol | Jaider Avila
             </a>
           </p>
           <div className="flex items-center gap-3">
             {['Nequi', 'PSE', 'Visa', 'Mastercard'].map((p) => (
-              <span key={p} className="text-xs px-2 py-1 text-white font-medium">{p}</span>
+              <span key={p} className="text-xs px-2 py-1 text-gray-500 font-medium">{p}</span>
             ))}
           </div>
         </div>

@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Search, ShoppingCart, Bell, CircleUserRound, AlignJustify } from 'lucide-react'
 import { useCart } from '../../context/CartContext'
@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
 
         {/* ══════════════════════════════════════════
             DESKTOP — una sola fila, h-[72px]
@@ -35,14 +35,14 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 mr-8">
-            <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-8" />
+            <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-8" style={{ filter: 'invert(1)' }} />
           </Link>
 
           {/* Hamburguesa + "Menú" */}
           <button
             onClick={() => setDrawerOpen((v) => !v)}
             className={`flex items-center gap-2 flex-shrink-0 mr-8 transition-colors ${
-              drawerOpen ? 'text-accent' : 'text-white hover:text-accent'
+              drawerOpen ? 'text-accent' : 'text-black hover:text-accent'
             }`}
           >
             <div className="flex flex-col gap-[5px]">
@@ -60,11 +60,11 @@ export default function Navbar() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Buscar productos, marcas, categorías..."
-              className="w-full h-11 bg-white pl-5 pr-14 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-accent transition"
+              className="w-full h-11 bg-aux border border-gray-200 pl-5 pr-14 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-accent transition"
             />
             <button
               type="submit"
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-black hover:text-gray-600 transition-colors"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-black hover:text-accent transition-colors"
             >
               <Search size={15} />
             </button>
@@ -76,12 +76,12 @@ export default function Navbar() {
             {/* Notificaciones */}
             <Link
               to="/notificaciones"
-              className="relative flex items-center justify-center h-full px-5 border-l border-white/10 text-white/70 hover:text-white transition-colors"
+              className="relative flex items-center justify-center h-full px-5 border-l border-gray-100 text-gray-500 hover:text-black transition-colors"
               aria-label="Notificaciones"
             >
               <Bell size={20} />
               {unreadCount > 0 && (
-                <span className="absolute top-3.5 right-2.5 min-w-[16px] h-4 bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border border-black">
+                <span className="absolute top-3.5 right-2.5 min-w-[16px] h-4 bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border border-white">
                   {unreadCount > 9 ? '9+' : unreadCount}
                 </span>
               )}
@@ -90,13 +90,13 @@ export default function Navbar() {
             {/* Usuario */}
             <Link
               to={isAuthenticated ? '/configuracion' : '/login'}
-              className="flex flex-col items-start justify-center h-full px-5 border-l border-white/10 hover:bg-white/5 transition-colors min-w-[128px] max-w-[180px]"
+              className="flex flex-col items-start justify-center h-full px-5 border-l border-gray-100 hover:bg-gray-50 transition-colors min-w-[128px] max-w-[180px]"
               title={isAuthenticated ? fullName || firstName : 'Iniciar sesion'}
             >
-              <span className="text-[11px] text-white/50 leading-none">
+              <span className="text-[11px] text-gray-500 leading-none">
                 {isAuthenticated ? 'Hola' : 'Bienvenido'}
               </span>
-              <span className="text-sm font-bold text-white leading-snug truncate w-full">
+              <span className="text-sm font-bold text-black leading-snug truncate w-full">
                 {isAuthenticated ? firstName : 'Iniciar sesión'}
               </span>
             </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
             {/* Carrito */}
             <Link
               to="/carrito"
-              className="relative flex items-center justify-center h-full px-5 border-l border-white/10 text-white/70 hover:text-white transition-colors"
+              className="relative flex items-center justify-center h-full px-5 border-l border-gray-100 text-gray-500 hover:text-black transition-colors"
             >
               <ShoppingCart size={24} />
               {count > 0 && (
@@ -126,25 +126,25 @@ export default function Navbar() {
 
             <button
               onClick={() => setDrawerOpen((v) => !v)}
-              className={`flex-shrink-0 transition-colors ${drawerOpen ? 'text-accent' : 'text-white'}`}
+              className={`flex-shrink-0 transition-colors ${drawerOpen ? 'text-accent' : 'text-black'}`}
             >
               <AlignJustify size={22} />
             </button>
 
             <Link to="/" className="flex items-center flex-shrink-0">
-              <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-6" />
+              <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-6" style={{ filter: 'invert(1)' }} />
             </Link>
 
             <div className="flex-1" />
 
             <Link
               to="/notificaciones"
-              className="relative w-9 h-9 flex items-center justify-center text-white/70 hover:text-white flex-shrink-0"
+              className="relative w-9 h-9 flex items-center justify-center text-gray-500 hover:text-black flex-shrink-0"
               aria-label="Notificaciones"
             >
               <Bell size={20} />
               {unreadCount > 0 && (
-                <span className="absolute top-0.5 right-0.5 min-w-[16px] h-4 bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border border-black">
+                <span className="absolute top-0.5 right-0.5 min-w-[16px] h-4 bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border border-white">
                   {unreadCount > 9 ? '9+' : unreadCount}
                 </span>
               )}
@@ -152,7 +152,7 @@ export default function Navbar() {
 
             <Link
               to={isAuthenticated ? '/configuracion' : '/login'}
-              className="w-9 h-9 flex items-center justify-center text-white/70 hover:text-white flex-shrink-0"
+              className="w-9 h-9 flex items-center justify-center text-gray-500 hover:text-black flex-shrink-0"
               aria-label={isAuthenticated ? fullName || firstName : 'Iniciar sesión'}
               title={isAuthenticated ? fullName || firstName : 'Iniciar sesión'}
             >
@@ -161,7 +161,7 @@ export default function Navbar() {
 
             <Link
               to="/carrito"
-              className="relative w-9 h-9 flex items-center justify-center text-white/70 hover:text-white flex-shrink-0"
+              className="relative w-9 h-9 flex items-center justify-center text-gray-500 hover:text-black flex-shrink-0"
             >
               <ShoppingCart size={20} />
               {count > 0 && (
@@ -180,11 +180,11 @@ export default function Navbar() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Buscar..."
-                className="w-full h-9 bg-white pl-4 pr-12 text-sm text-gray-800 placeholder:text-gray-400 outline-none"
+                className="w-full h-9 bg-aux border border-gray-200 pl-4 pr-12 text-sm text-gray-800 placeholder:text-gray-400 outline-none"
               />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center text-black hover:text-gray-600 transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center text-black hover:text-accent transition-colors"
               >
                 <Search size={13} />
               </button>

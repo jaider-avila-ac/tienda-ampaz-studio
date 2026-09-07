@@ -133,13 +133,13 @@ export default function DevolucionPanel({ numero, estadoPedido }) {
                 value={codigo}
                 onChange={(e) => setCodigo(e.target.value)}
                 placeholder="Número de guía del envío"
-                className="flex-1 border border-gray-200 px-3 py-1.5 text-xs focus:outline-none focus:border-black"
+                className="flex-1 border border-gray-200 px-3 py-1.5 text-xs focus:outline-none focus:border-accent"
               />
               <button
                 type="button"
                 onClick={handleGuardarCodigo}
                 disabled={loading || !codigo.trim()}
-                className="text-xs font-bold text-white bg-black px-3 py-1.5 hover:bg-gray-800 disabled:opacity-60"
+                className="text-xs font-bold text-white bg-accent px-3 py-1.5 hover:bg-accent-dark disabled:opacity-60"
               >
                 Guardar
               </button>
@@ -156,7 +156,7 @@ export default function DevolucionPanel({ numero, estadoPedido }) {
         <button
           type="button"
           onClick={() => setFormOpen(true)}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-black border border-gray-200 px-3 py-1.5 hover:border-black transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-black border border-gray-200 px-3 py-1.5 hover:border-accent transition-colors"
         >
           <PackageX size={13} /> Solicitar devolución
         </button>
@@ -169,14 +169,14 @@ export default function DevolucionPanel({ numero, estadoPedido }) {
             <button
               type="button"
               onClick={() => setTipo('retracto')}
-              className={`flex-1 text-xs font-semibold px-2 py-2 border transition-colors ${tipo === 'retracto' ? 'bg-black text-white border-black' : 'border-gray-200 text-gray-600 hover:border-black'}`}
+              className={`flex-1 text-xs font-semibold px-2 py-2 border transition-colors ${tipo === 'retracto' ? 'bg-accent text-white border-accent' : 'border-gray-200 text-gray-600 hover:border-accent'}`}
             >
               Ya no lo quiero
             </button>
             <button
               type="button"
               onClick={() => setTipo('defecto')}
-              className={`flex-1 text-xs font-semibold px-2 py-2 border transition-colors ${tipo === 'defecto' ? 'bg-black text-white border-black' : 'border-gray-200 text-gray-600 hover:border-black'}`}
+              className={`flex-1 text-xs font-semibold px-2 py-2 border transition-colors ${tipo === 'defecto' ? 'bg-accent text-white border-accent' : 'border-gray-200 text-gray-600 hover:border-accent'}`}
             >
               Tiene un defecto
             </button>
@@ -199,7 +199,7 @@ export default function DevolucionPanel({ numero, estadoPedido }) {
             onChange={(e) => setMotivo(e.target.value)}
             placeholder={tipo === 'defecto' ? 'Describe el defecto que notaste...' : 'Cuéntanos qué pasó con tu pedido...'}
             rows={3}
-            className="w-full border border-gray-200 px-3 py-2 text-xs focus:outline-none focus:border-black resize-none"
+            className="w-full border border-gray-200 px-3 py-2 text-xs focus:outline-none focus:border-accent resize-none"
           />
           <div className="flex flex-wrap gap-2">
             {fotos.map((f, i) => (
@@ -208,7 +208,7 @@ export default function DevolucionPanel({ numero, estadoPedido }) {
                 <button
                   type="button"
                   onClick={() => quitarFoto(i)}
-                  className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-black text-white flex items-center justify-center"
+                  className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-accent text-white flex items-center justify-center"
                 >
                   <X size={10} />
                 </button>
@@ -218,7 +218,7 @@ export default function DevolucionPanel({ numero, estadoPedido }) {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="w-14 h-14 flex-shrink-0 border border-dashed border-gray-300 flex items-center justify-center text-gray-400 hover:border-black hover:text-black transition-colors"
+                className="w-14 h-14 flex-shrink-0 border border-dashed border-gray-300 flex items-center justify-center text-gray-400 hover:border-accent hover:text-black transition-colors"
               >
                 <Upload size={16} />
               </button>
@@ -230,7 +230,7 @@ export default function DevolucionPanel({ numero, estadoPedido }) {
               type="button"
               onClick={handleEnviarSolicitud}
               disabled={loading}
-              className="flex items-center gap-1.5 text-xs font-bold text-white bg-black px-3 py-1.5 hover:bg-gray-800 disabled:opacity-60"
+              className="flex items-center gap-1.5 text-xs font-bold text-white bg-accent px-3 py-1.5 hover:bg-accent-dark disabled:opacity-60"
             >
               {loading ? <><Loader2 size={13} className="animate-spin" /> Enviando…</> : 'Enviar solicitud'}
             </button>

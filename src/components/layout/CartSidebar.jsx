@@ -16,7 +16,7 @@ export default function CartSidebar({ onClose }) {
           <ShoppingBag size={17} className="text-black" />
           <span className="text-sm font-bold text-black">Tu carrito</span>
           {count > 0 && (
-            <span className="w-5 h-5 bg-black text-white text-xs font-bold flex items-center justify-center">
+            <span className="w-5 h-5 bg-accent text-white text-xs font-bold flex items-center justify-center">
               {count}
             </span>
           )}

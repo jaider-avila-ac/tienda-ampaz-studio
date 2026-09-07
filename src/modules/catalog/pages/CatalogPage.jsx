@@ -99,7 +99,7 @@ export default function CatalogPage() {
     <div className="pb-16">
 
       {/* ── Banner ── siempre negro, imagen con overlay si existe */}
-      <div className="relative bg-black overflow-hidden h-[220px] sm:h-[260px]">
+      <div className="relative bg-accent overflow-hidden h-[220px] sm:h-[260px]">
         {bannerImg && (
           <img
             key={bannerImg}
@@ -131,7 +131,7 @@ export default function CatalogPage() {
             <button
               onClick={() => setFilter('subcategoria', '')}
               className={`flex-shrink-0 px-3 py-1.5 text-xs font-semibold border transition-all ${
-                !activeSub ? 'bg-black text-white border-black' : 'border-gray-200 text-gray-600 hover:border-black'
+                !activeSub ? 'bg-accent text-white border-accent' : 'border-gray-200 text-gray-600 hover:border-accent'
               }`}
             >
               Todo
@@ -141,7 +141,7 @@ export default function CatalogPage() {
                 key={sub}
                 onClick={() => setFilter('subcategoria', activeSub === sub ? '' : sub)}
                 className={`flex-shrink-0 px-3 py-1.5 text-xs font-semibold border transition-all ${
-                  activeSub === sub ? 'bg-black text-white border-black' : 'border-gray-200 text-gray-600 hover:border-black'
+                  activeSub === sub ? 'bg-accent text-white border-accent' : 'border-gray-200 text-gray-600 hover:border-accent'
                 }`}
               >
                 {sub}
@@ -162,7 +162,7 @@ export default function CatalogPage() {
             {hasRefinements && (
               <button
                 onClick={() => clearFilters({ preserveCategory: Boolean(categoriaId) })}
-                className="flex items-center gap-1 text-xs text-gray-500 hover:text-black border border-gray-200 px-3 py-1.5 hover:border-black transition-colors"
+                className="flex items-center gap-1 text-xs text-gray-500 hover:text-black border border-gray-200 px-3 py-1.5 hover:border-accent transition-colors"
               >
                 <X size={11} /> Limpiar filtros
               </button>
@@ -171,7 +171,7 @@ export default function CatalogPage() {
               <select
                 value={sort}
                 onChange={(e) => setFilter('sort', e.target.value)}
-                className="appearance-none bg-white border border-gray-200 pl-3 pr-8 py-1.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-black cursor-pointer"
+                className="appearance-none bg-white border border-gray-200 pl-3 pr-8 py-1.5 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-accent cursor-pointer"
               >
                 {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
               </select>

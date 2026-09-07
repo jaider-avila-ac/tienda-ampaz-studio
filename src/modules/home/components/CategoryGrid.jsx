@@ -30,7 +30,7 @@ export default function CategoryGrid() {
             className="group flex-shrink-0 w-28 md:w-auto"
           >
             {/* Caja cuadrada: siempre fondo negro, imagen encima, overlay negro, texto blanco */}
-            <div className="relative overflow-hidden aspect-square mb-2 md:mb-3 bg-black">
+            <div className="relative overflow-hidden aspect-square mb-2 md:mb-3 bg-accent">
               {/* Imagen del producto/categoría (si existe) */}
               {cat.imagenUrl && (
                 <img
