@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER: monograma simple "AS" en la paleta de Ampaz Studio — reemplazar por el
+     isotipo real cuando esté listo. Mismas proporciones que el isotipo original (79.5x79.5,
+     esquinas redondeadas) para que encaje sin ajustes en el resto del layout. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.5 79.5" width="79.5" height="79.5">
+  <rect width="79.5" height="79.5" rx="7.8" ry="7.8" fill="#FFFFFF"/>
+  <text x="39.75" y="53" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800"
+        font-size="34" fill="#7B5F30">AS</text>
+</svg>

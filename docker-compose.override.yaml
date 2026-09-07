@@ -1,0 +1,4 @@
+services:
+  tienda:
+    ports:
+      - "8083:80"

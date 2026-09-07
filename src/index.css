@@ -1,0 +1,131 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { font-family: 'Inter', sans-serif; }
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page-in { animation: pageIn 0.28s ease-out; }
+
+@keyframes drawerIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.drawer-in { animation: drawerIn 0.22s ease-out; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-in { animation: fadeIn 0.18s ease-out; }
+
+/* Tira de productos con movimiento constante (ver "Más vendidos" en el inicio).
+   El track duplica los items y se desplaza -50% para que el loop sea invisible. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Layout constants */
+:root {
+  --header-h: 56px;
+  --left-w: 232px;
+  --cart-w: 272px;
+}
+
+@layer base {
+  body { @apply bg-aux text-black antialiased; }
+}
+
+@layer components {
+  /* ── Botones ─────────────────────────── */
+  .btn-primary {
+    @apply bg-black text-white px-5 py-2.5 font-semibold text-sm
+           hover:bg-gray-800 transition-all duration-200
+           flex items-center justify-center gap-2 active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-white text-black border-2 border-black px-5 py-2.5 font-semibold text-sm
+           hover:bg-black hover:text-white transition-all duration-200
+           flex items-center justify-center gap-2 active:scale-95;
+  }
+  .btn-lime {
+    @apply text-white px-5 py-2.5 font-bold text-sm
+           transition-all duration-200
+           flex items-center justify-center gap-2 active:scale-95;
+    background-color: theme('colors.accent');
+  }
+  .btn-lime:hover {
+    background-color: theme('colors.accent-dark');
+  }
+  .btn-ghost {
+    @apply text-gray-600 px-3 py-2 text-sm font-medium
+           hover:bg-gray-100 hover:text-black transition-colors
+           flex items-center gap-2;
+  }
+
+  /* ── Tarjeta de producto ─────────────── */
+  .product-card {
+    @apply bg-white overflow-hidden border border-gray-100
+           hover:shadow-md hover:-translate-y-0.5
+           transition-all duration-200 cursor-pointer;
+  }
+
+  /* ── Badges ──────────────────────────── */
+  .badge-new { @apply text-white text-xs font-bold px-2 py-0.5 ; background-color: theme('colors.accent'); }
+  .badge-sale { @apply bg-red-600 text-white text-xs font-bold px-2 py-0.5 ; }
+  .badge-hot { @apply bg-black text-white text-xs font-bold px-2 py-0.5 ; }
+
+  /* ── Selector de talla ───────────────── */
+  .size-btn { @apply h-8 min-w-8 px-1.5 border-2 border-gray-200 text-xs font-semibold transition-all hover:border-black; }
+  .size-btn-active { @apply border-black bg-black text-white; }
+  .size-btn-disabled { @apply border-gray-100 text-gray-300 cursor-not-allowed line-through; }
+
+  /* ── Punto de color ──────────────────── */
+  .color-dot { @apply w-6 h-6 border-2 border-gray-200 cursor-pointer transition-all hover:scale-110; }
+  .color-dot-active { @apply border-black scale-110 ring-2 ring-black ring-offset-2; }
+  .color-dot-disabled { @apply opacity-25 cursor-not-allowed hover:scale-100; }
+
+  /* ── Nav izquierdo ───────────────────── */
+  .left-nav-item {
+    @apply flex items-center gap-2.5 px-3 py-2 text-sm font-medium
+           transition-colors cursor-pointer text-gray-700
+           hover:bg-gray-100 hover:text-black;
+  }
+  .left-nav-item-active {
+    @apply bg-black text-white hover:bg-gray-900;
+  }
+  .left-nav-sub {
+    @apply flex items-center gap-2 pl-9 pr-3 py-1.5 text-xs font-medium
+           text-gray-500 hover:text-black hover:bg-gray-50 transition-colors cursor-pointer;
+  }
+  .left-nav-sub-active {
+    @apply text-black font-semibold;
+  }
+
+  /* ── Sidebar label ───────────────────── */
+  .sidebar-label {
+    @apply text-xs font-bold uppercase tracking-widest text-gray-400 px-3 mb-1;
+  }
+
+  /* ── Sección genérica ────────────────── */
+  .section-title { @apply text-xl font-black text-black; }
+}
+
+/* Scrollbar fino */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e5e7eb; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

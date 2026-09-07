@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# PLACEHOLDER: actualizar con el dominio real de Ampaz Studio cuando esté decidido.
+Sitemap: https://www.ampazstudio.com/sitemap.xml

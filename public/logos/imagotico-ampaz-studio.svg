@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER: wordmark simple "AMPAZ STUDIO" — reemplazar por el imagotipo real cuando esté
+     listo. Fill blanco a propósito (mismo criterio que el imagotipo original): en Navbar/Footer
+     se usa tal cual sobre fondo oscuro, y en las pantallas de login/registro se le aplica
+     filter: invert(1) para que quede en negro sobre el panel claro — un logo en un solo color
+     (no en los tonos de marca) es lo que hace que ese invert se vea limpio en los dos casos. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <text x="0" y="65" font-family="Inter, sans-serif" font-weight="800" font-size="52"
+        letter-spacing="1" fill="#FFFFFF">AMPAZ STUDIO</text>
+</svg>

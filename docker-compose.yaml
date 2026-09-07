@@ -1,0 +1,26 @@
+name: ampaz-studio-tienda
+
+services:
+  tienda:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8080}
+        VITE_PUBLIC_SITE_URL: ${VITE_PUBLIC_SITE_URL:-http://localhost:5176}
+        VITE_GOOGLE_CLIENT_ID: ${VITE_GOOGLE_CLIENT_ID:-608123125346-9iad9jvkl49j9f3hj5piipolbkjm1h56.apps.googleusercontent.com}
+        # Respaldo de dev local (ver .env.example) — en producción, con el dominio real de
+        # Ampaz Studio registrado, la resolución por dominio ya no lo necesita.
+        VITE_TENANT_ID: ${VITE_TENANT_ID:-2}
+    image: ampaz-studio-tienda
+    container_name: ampaz-studio-tienda
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - default
+      - coolify
+
+networks:
+  coolify:
+    external: true
