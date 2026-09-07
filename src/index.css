@@ -16,6 +16,14 @@
 }
 .drawer-in { animation: drawerIn 0.22s ease-out; }
 
+/* Menú de categorías como panel desplegable de ancho completo bajo el header
+   (versión alterna de la interfaz — ver CategoryDrawer.jsx). */
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dropdown-in { animation: dropIn 0.2s ease-out; }
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

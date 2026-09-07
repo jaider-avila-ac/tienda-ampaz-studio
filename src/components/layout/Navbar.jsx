@@ -1,11 +1,19 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Search, ShoppingCart, Bell, CircleUserRound, AlignJustify } from 'lucide-react'
+import { Search, ShoppingCart, Bell, CircleUserRound, Menu as MenuIcon } from 'lucide-react'
 import { useCart } from '../../context/CartContext'
 import { useAuth } from '../../context/AuthContext'
 import { useNotifications } from '../../context/NotificationsContext'
 import CategoryDrawer from './CategoryDrawer'
 
+// ══════════════════════════════════════════════════════════════════════════
+// Versión alterna del header: misma data/funciones que la original (mismo
+// estado de búsqueda, mismos conteos de carrito/notificaciones, mismos
+// links), pero con otra forma — franja superior, logo centrado y una fila
+// de búsqueda propia, en vez de barra única con logo a la izquierda.
+// Alto total unificado (140px) para mobile y desktop, a diferencia del
+// diseño anterior que usaba dos alturas distintas — ver StoreLayout.jsx.
+// ══════════════════════════════════════════════════════════════════════════
 export default function Navbar() {
   const { count } = useCart()
   const { isAuthenticated, user } = useAuth()
@@ -26,174 +34,93 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+      <div className="fixed top-0 left-0 right-0 z-50">
 
-        {/* ══════════════════════════════════════════
-            DESKTOP — una sola fila, h-[72px]
-        ══════════════════════════════════════════ */}
-        <div className="hidden lg:flex items-center h-[72px] max-w-7xl mx-auto px-6 gap-0">
+        {/* Franja superior */}
+        <div className="h-7 bg-accent flex items-center justify-center px-3">
+          <p className="text-white text-[11px] font-medium tracking-wide truncate">
+            Envíos a todo Colombia · Cambios sin costo
+          </p>
+        </div>
 
-          {/* Logo */}
-          <Link to="/" className="flex items-center flex-shrink-0 mr-8">
-            <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-8" style={{ filter: 'invert(1)' }} />
-          </Link>
+        {/* Fila principal — hamburguesa | logo centrado | iconos */}
+        <div className="h-16 bg-white border-b border-gray-100">
+          <div className="h-full max-w-7xl mx-auto px-4 lg:px-6 grid grid-cols-[auto_1fr_auto] items-center gap-2">
 
-          {/* Hamburguesa + "Menú" */}
-          <button
-            onClick={() => setDrawerOpen((v) => !v)}
-            className={`flex items-center gap-2 flex-shrink-0 mr-8 transition-colors ${
-              drawerOpen ? 'text-accent' : 'text-black hover:text-accent'
-            }`}
-          >
-            <div className="flex flex-col gap-[5px]">
-              <span className="block w-[22px] h-[2.5px] bg-current " />
-              <span className="block w-[22px] h-[2.5px] bg-current " />
-              <span className="block w-[22px] h-[2.5px] bg-current " />
+            <button
+              onClick={() => setDrawerOpen((v) => !v)}
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors flex-shrink-0 ${
+                drawerOpen ? 'bg-accent text-white' : 'text-black hover:bg-aux'
+              }`}
+              aria-label="Menú"
+            >
+              <MenuIcon size={19} />
+            </button>
+
+            <Link to="/" className="flex items-center justify-center">
+              <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-6 sm:h-7" style={{ filter: 'invert(1)' }} />
+            </Link>
+
+            <div className="flex items-center gap-0.5 sm:gap-1 justify-self-end">
+              <Link
+                to="/notificaciones"
+                className="relative w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
+                aria-label="Notificaciones"
+              >
+                <Bell size={18} />
+                {unreadCount > 0 && (
+                  <span className="absolute top-1 right-1 min-w-[15px] h-[15px] rounded-full bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border-2 border-white">
+                    {unreadCount > 9 ? '9+' : unreadCount}
+                  </span>
+                )}
+              </Link>
+
+              <Link
+                to={isAuthenticated ? '/configuracion' : '/login'}
+                className="hidden sm:flex w-10 h-10 rounded-full items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
+                aria-label={isAuthenticated ? fullName || firstName : 'Iniciar sesión'}
+                title={isAuthenticated ? fullName || firstName : 'Iniciar sesión'}
+              >
+                <CircleUserRound size={19} />
+              </Link>
+
+              <Link
+                to="/carrito"
+                className="relative w-10 h-10 rounded-full flex items-center justify-center text-gray-500 hover:bg-aux hover:text-black transition-colors"
+              >
+                <ShoppingCart size={19} />
+                {count > 0 && (
+                  <span className="absolute top-1 right-1 min-w-[15px] h-[15px] rounded-full bg-accent text-white text-[9px] font-black flex items-center justify-center px-0.5 border-2 border-white">
+                    {count}
+                  </span>
+                )}
+              </Link>
             </div>
-            <span className="text-[15px] font-medium">Menú</span>
-          </button>
+          </div>
+        </div>
 
-          {/* Barra de búsqueda — ocupa el espacio restante */}
-          <form onSubmit={handleSearch} className="flex-1 relative">
+        {/* Fila de búsqueda — un solo diseño para cualquier tamaño de pantalla */}
+        <div className="h-12 bg-aux border-b border-gray-100 flex items-center px-4 lg:px-6">
+          <form onSubmit={handleSearch} className="relative w-full max-w-3xl mx-auto">
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Buscar productos, marcas, categorías..."
-              className="w-full h-11 bg-aux border border-gray-200 pl-5 pr-14 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-accent transition"
+              className="w-full h-9 rounded-full bg-white border border-gray-200 pl-4 pr-11 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-accent transition"
             />
             <button
               type="submit"
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-black hover:text-accent transition-colors"
+              aria-label="Buscar"
+              className="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full flex items-center justify-center text-white bg-accent hover:bg-accent-dark transition-colors"
             >
-              <Search size={15} />
+              <Search size={13} />
             </button>
           </form>
-
-          {/* Separadores + iconos derecha */}
-          <div className="flex items-center h-[72px] ml-0">
-
-            {/* Notificaciones */}
-            <Link
-              to="/notificaciones"
-              className="relative flex items-center justify-center h-full px-5 border-l border-gray-100 text-gray-500 hover:text-black transition-colors"
-              aria-label="Notificaciones"
-            >
-              <Bell size={20} />
-              {unreadCount > 0 && (
-                <span className="absolute top-3.5 right-2.5 min-w-[16px] h-4 bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border border-white">
-                  {unreadCount > 9 ? '9+' : unreadCount}
-                </span>
-              )}
-            </Link>
-
-            {/* Usuario */}
-            <Link
-              to={isAuthenticated ? '/configuracion' : '/login'}
-              className="flex flex-col items-start justify-center h-full px-5 border-l border-gray-100 hover:bg-gray-50 transition-colors min-w-[128px] max-w-[180px]"
-              title={isAuthenticated ? fullName || firstName : 'Iniciar sesion'}
-            >
-              <span className="text-[11px] text-gray-500 leading-none">
-                {isAuthenticated ? 'Hola' : 'Bienvenido'}
-              </span>
-              <span className="text-sm font-bold text-black leading-snug truncate w-full">
-                {isAuthenticated ? firstName : 'Iniciar sesión'}
-              </span>
-            </Link>
-
-            {/* Carrito */}
-            <Link
-              to="/carrito"
-              className="relative flex items-center justify-center h-full px-5 border-l border-gray-100 text-gray-500 hover:text-black transition-colors"
-            >
-              <ShoppingCart size={24} />
-              {count > 0 && (
-                <span className="absolute top-3.5 right-2 min-w-[18px] h-[18px] bg-accent text-white text-[10px] font-black flex items-center justify-center px-0.5">
-                  {count}
-                </span>
-              )}
-            </Link>
-          </div>
-        </div>
-
-        {/* ══════════════════════════════════════════
-            MÓVIL — dos filas
-        ══════════════════════════════════════════ */}
-        <div className="lg:hidden">
-
-          {/* Fila 1: hamburguesa | logo | spacer | usuario | carrito */}
-          <div className="flex items-center h-[56px] px-4 gap-3">
-
-            <button
-              onClick={() => setDrawerOpen((v) => !v)}
-              className={`flex-shrink-0 transition-colors ${drawerOpen ? 'text-accent' : 'text-black'}`}
-            >
-              <AlignJustify size={22} />
-            </button>
-
-            <Link to="/" className="flex items-center flex-shrink-0">
-              <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-6" style={{ filter: 'invert(1)' }} />
-            </Link>
-
-            <div className="flex-1" />
-
-            <Link
-              to="/notificaciones"
-              className="relative w-9 h-9 flex items-center justify-center text-gray-500 hover:text-black flex-shrink-0"
-              aria-label="Notificaciones"
-            >
-              <Bell size={20} />
-              {unreadCount > 0 && (
-                <span className="absolute top-0.5 right-0.5 min-w-[16px] h-4 bg-red-600 text-white text-[9px] font-black flex items-center justify-center px-0.5 border border-white">
-                  {unreadCount > 9 ? '9+' : unreadCount}
-                </span>
-              )}
-            </Link>
-
-            <Link
-              to={isAuthenticated ? '/configuracion' : '/login'}
-              className="w-9 h-9 flex items-center justify-center text-gray-500 hover:text-black flex-shrink-0"
-              aria-label={isAuthenticated ? fullName || firstName : 'Iniciar sesión'}
-              title={isAuthenticated ? fullName || firstName : 'Iniciar sesión'}
-            >
-              <CircleUserRound size={20} />
-            </Link>
-
-            <Link
-              to="/carrito"
-              className="relative w-9 h-9 flex items-center justify-center text-gray-500 hover:text-black flex-shrink-0"
-            >
-              <ShoppingCart size={20} />
-              {count > 0 && (
-                <span className="absolute top-0.5 right-0.5 min-w-[16px] h-4 bg-accent text-white text-[10px] font-black flex items-center justify-center px-0.5">
-                  {count}
-                </span>
-              )}
-            </Link>
-          </div>
-
-          {/* Fila 2: buscador ancho completo */}
-          <div className="flex items-center h-[44px] px-4 pb-2">
-            <form onSubmit={handleSearch} className="flex-1 relative">
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Buscar..."
-                className="w-full h-9 bg-aux border border-gray-200 pl-4 pr-12 text-sm text-gray-800 placeholder:text-gray-400 outline-none"
-              />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center text-black hover:text-accent transition-colors"
-              >
-                <Search size={13} />
-              </button>
-            </form>
-          </div>
         </div>
       </div>
 
-      {/* Drawer de categorías */}
+      {/* Menú de categorías */}
       <CategoryDrawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </>
   )

@@ -18,76 +18,92 @@ function IconTikTok({ size = 17 }) {
   )
 }
 
+// ══════════════════════════════════════════════════════════════════════════
+// Versión alterna del footer: mismo contenido (mismos links de información,
+// mismas redes, mismo contacto, misma barra inferior), pero en un solo
+// bloque centrado y apilado — logo/redes arriba, un único renglón de enlaces
+// en línea, contacto debajo — en vez de la grilla de 3 columnas anterior.
+// ══════════════════════════════════════════════════════════════════════════
+const REDES = [
+  { icon: Instagram, href: 'https://www.instagram.com/', label: 'Instagram' },
+  { icon: Facebook, href: 'https://www.facebook.com/', label: 'Facebook' },
+  { icon: IconTikTok, href: 'https://www.tiktok.com/', label: 'TikTok' },
+  { icon: IconWhatsApp, href: 'https://wa.me/573000000000', label: 'WhatsApp' },
+]
+
+// PLACEHOLDER: estas páginas no existen todavía, apuntan al dominio real de Ampaz Studio a
+// futuro (mismo patrón que calzacaribe.com/terminos etc.)
+const INFO_LINKS = [
+  { label: 'Política de cambios', href: 'https://www.ampazstudio.com/cambios' },
+  { label: 'Guía de tallas', href: 'https://www.ampazstudio.com/tallas' },
+  { label: 'Términos y condiciones', href: 'https://www.ampazstudio.com/terminos' },
+  { label: 'Política de privacidad', href: 'https://www.ampazstudio.com/privacidad' },
+  { label: 'Preguntas frecuentes', href: 'https://www.ampazstudio.com/faq' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-white text-black border-t border-gray-100 mt-16">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {/* Brand */}
-          <div>
-            <div className="mb-4">
-              <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-8" style={{ filter: 'invert(1)' }} />
-            </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {/* PLACEHOLDER: describe acá a qué se dedica Ampaz Studio. */}
-              Ampaz Studio.
-            </p>
-            <div className="flex items-center gap-3 mt-5">
-              {/* PLACEHOLDER: reemplazar los href por las redes/WhatsApp reales de Ampaz Studio. */}
-              {[
-                { icon: Instagram, href: 'https://www.instagram.com/', label: 'Instagram' },
-                { icon: Facebook, href: 'https://www.facebook.com/', label: 'Facebook' },
-                { icon: IconTikTok, href: 'https://www.tiktok.com/', label: 'TikTok' },
-                { icon: IconWhatsApp, href: 'https://wa.me/573000000000', label: 'WhatsApp' },
-              ].map(({ icon: Icon, href, label }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 flex items-center justify-center text-gray-600 hover:bg-gray-50 hover:text-accent transition-all" aria-label={label}>
-                  <Icon size={17} />
-                </a>
-              ))}
-            </div>
-          </div>
+      <div className="max-w-3xl mx-auto px-6 py-14 flex flex-col items-center text-center">
 
-          {/* Info — PLACEHOLDER: estas páginas no existen todavía, apuntan al dominio real de
-              Ampaz Studio a futuro (mismo patrón que calzacaribe.com/terminos etc.) */}
-          <div>
-            <h3 className="font-bold text-sm uppercase tracking-wider text-black mb-4">Información</h3>
-            <ul className="space-y-2">
-              {[
-                { label: 'Política de cambios', href: 'https://www.ampazstudio.com/cambios' },
-                { label: 'Guía de tallas', href: 'https://www.ampazstudio.com/tallas' },
-                { label: 'Términos y condiciones', href: 'https://www.ampazstudio.com/terminos' },
-                { label: 'Política de privacidad', href: 'https://www.ampazstudio.com/privacidad' },
-                { label: 'Preguntas frecuentes', href: 'https://www.ampazstudio.com/faq' },
-              ].map(({ label, href }) => (
-                <li key={href}>
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-accent transition-colors">
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Logo */}
+        <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-8 mb-4" style={{ filter: 'invert(1)' }} />
 
-          {/* Contacto — PLACEHOLDER: reemplazar teléfono/dirección por los reales de Ampaz Studio. */}
-          <div>
-            <h3 className="font-bold text-sm uppercase tracking-wider text-black mb-4">Contacto</h3>
-            <div className="space-y-4">
-              <div>
-                <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-accent transition-colors">
-                  <Phone size={14} className="text-gray-500 flex-shrink-0" />300 000 0000
-                </a>
-                <p className="flex items-start gap-2 text-sm text-gray-600 mt-1.5">
-                  <MapPin size={14} className="text-gray-500 flex-shrink-0 mt-0.5" />
-                  <span>Dirección pendiente</span>
-                </p>
-              </div>
-            </div>
-            <div className="mt-5 p-3 bg-aux">
-              <p className="text-xs text-gray-500">Horario de atención</p>
-              <p className="text-sm font-semibold text-black mt-0.5">Lun–Sáb 8am–6pm</p>
-            </div>
-          </div>
+        {/* PLACEHOLDER: describe acá a qué se dedica Ampaz Studio. */}
+        <p className="text-gray-600 text-sm leading-relaxed max-w-md">
+          Ampaz Studio.
+        </p>
+
+        {/* Redes — PLACEHOLDER: reemplazar los href por las redes/WhatsApp reales de Ampaz Studio. */}
+        <div className="flex items-center gap-2 mt-5">
+          {REDES.map(({ icon: Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-accent hover:text-accent transition-all"
+              aria-label={label}
+            >
+              <Icon size={16} />
+            </a>
+          ))}
+        </div>
+
+        {/* Enlaces de información, en un solo renglón */}
+        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-8 max-w-2xl">
+          {INFO_LINKS.map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 hover:text-accent transition-colors"
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Contacto — PLACEHOLDER: reemplazar teléfono/dirección por los reales de Ampaz Studio. */}
+        <div className="rounded-2xl bg-aux px-6 py-4 mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+          <a
+            href="https://wa.me/573000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-gray-700 hover:text-accent transition-colors"
+          >
+            <Phone size={14} className="text-gray-500 flex-shrink-0" />300 000 0000
+          </a>
+          <span className="hidden sm:block w-px h-4 bg-gray-300" />
+          <p className="flex items-center gap-2 text-sm text-gray-700">
+            <MapPin size={14} className="text-gray-500 flex-shrink-0" />
+            <span>Dirección pendiente</span>
+          </p>
+          <span className="hidden sm:block w-px h-4 bg-gray-300" />
+          <p className="text-sm text-gray-700">
+            <span className="text-gray-400">Horario:</span> Lun–Sáb 8am–6pm
+          </p>
         </div>
       </div>
 
