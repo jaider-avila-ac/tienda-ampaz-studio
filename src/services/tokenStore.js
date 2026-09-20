@@ -1,5 +1,5 @@
-const TOKEN_KEY  = 'ampaz_studio_token'
-const USER_KEY   = 'ampaz_studio_user'
+const TOKEN_KEY  = 'duo_chic_studio_token'
+const USER_KEY   = 'duo_chic_studio_user'
 
 export const tokenStore = {
   set(token, user) {

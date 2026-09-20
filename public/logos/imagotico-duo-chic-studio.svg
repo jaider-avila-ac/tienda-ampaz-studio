@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER: wordmark simple "DUO CHIC STUDIO" — reemplazar por el imagotipo real cuando esté
+     listo. Fill blanco a propósito (mismo criterio que el imagotipo original): en Navbar/Footer
+     (fondo blanco) y en login/registro se le aplica filter: invert(1) para que quede en negro —
+     un logo en un solo color (no en los tonos de marca) es lo que hace que ese invert se vea
+     limpio en todos los casos. viewBox más ancho que el de Ampaz Studio porque el texto es más
+     largo ("DUO CHIC STUDIO" vs "AMPAZ STUDIO"). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="520" height="100">
+  <text x="0" y="65" font-family="Inter, sans-serif" font-weight="800" font-size="46"
+        letter-spacing="1" fill="#FFFFFF">DUO CHIC STUDIO</text>
+</svg>

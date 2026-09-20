@@ -379,7 +379,7 @@ function PreferenciasSection({ profile, onProfileSaved }) {
           className="mt-0.5 w-4 h-4 flex-shrink-0 accent-black"
         />
         <span className="text-sm text-gray-600 leading-relaxed">
-          Quiero recibir ofertas y promociones de Ampaz Studio. Esto no afecta las notificaciones
+          Quiero recibir ofertas y promociones de Duo Chic Studio. Esto no afecta las notificaciones
           sobre tus pedidos (confirmación, envío, entrega), que siempre las recibes.
         </span>
       </label>

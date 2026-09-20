@@ -1,4 +1,4 @@
-name: ampaz-studio-tienda
+name: duo-chic-studio-tienda
 
 services:
   tienda:
@@ -10,10 +10,10 @@ services:
         VITE_PUBLIC_SITE_URL: ${VITE_PUBLIC_SITE_URL:-http://localhost:5176}
         VITE_GOOGLE_CLIENT_ID: ${VITE_GOOGLE_CLIENT_ID:-608123125346-9iad9jvkl49j9f3hj5piipolbkjm1h56.apps.googleusercontent.com}
         # Respaldo de dev local (ver .env.example) — en producción, con el dominio real de
-        # Ampaz Studio registrado, la resolución por dominio ya no lo necesita.
+        # Duo Chic Studio registrado, la resolución por dominio ya no lo necesita.
         VITE_TENANT_ID: ${VITE_TENANT_ID:-2}
-    image: ampaz-studio-tienda
-    container_name: ampaz-studio-tienda
+    image: duo-chic-studio-tienda
+    container_name: duo-chic-studio-tienda
     restart: unless-stopped
     expose:
       - "80"

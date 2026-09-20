@@ -46,7 +46,7 @@ export default function ProductCard({ product }) {
       {/* Imagen */}
       <div className="relative aspect-square bg-gray-50 overflow-hidden">
         <img
-          src={imagenes?.[0]?.url ?? imagenes?.[0] ?? 'https://placehold.co/300x300/f5f5f5/999?text=Ampaz+Studio'}
+          src={imagenes?.[0]?.url ?? imagenes?.[0] ?? 'https://placehold.co/300x300/f5f5f5/999?text=Duo+Chic+Studio'}
           alt={nombre}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"

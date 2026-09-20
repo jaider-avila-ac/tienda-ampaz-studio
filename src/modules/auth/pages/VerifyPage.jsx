@@ -86,7 +86,7 @@ export default function VerifyPage() {
       <div className="w-full max-w-[400px] flex flex-col gap-6 text-center">
 
         <div className="flex justify-center">
-          <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-14" style={{ filter: 'invert(1)' }} />
+          <img src="/logos/imagotico-duo-chic-studio.svg" alt="Duo Chic Studio" className="h-14" style={{ filter: 'invert(1)' }} />
         </div>
 
         <div>

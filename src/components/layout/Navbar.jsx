@@ -50,7 +50,7 @@ export default function Navbar() {
             </button>
 
             <Link to="/" className="flex items-center justify-center">
-              <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-6 sm:h-7" style={{ filter: 'invert(1)' }} />
+              <img src="/logos/imagotico-duo-chic-studio.svg" alt="Duo Chic Studio" className="h-6 sm:h-7" style={{ filter: 'invert(1)' }} />
             </Link>
 
             <div className="flex items-center gap-0.5 sm:gap-1 justify-self-end">

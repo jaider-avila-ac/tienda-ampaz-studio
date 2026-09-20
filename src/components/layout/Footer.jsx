@@ -31,14 +31,14 @@ const REDES = [
   { icon: IconWhatsApp, href: 'https://wa.me/573000000000', label: 'WhatsApp' },
 ]
 
-// PLACEHOLDER: estas páginas no existen todavía, apuntan al dominio real de Ampaz Studio a
+// PLACEHOLDER: estas páginas no existen todavía, apuntan al dominio real de Duo Chic Studio a
 // futuro (mismo patrón que calzacaribe.com/terminos etc.)
 const INFO_LINKS = [
-  { label: 'Política de cambios', href: 'https://www.ampazstudio.com/cambios' },
-  { label: 'Guía de tallas', href: 'https://www.ampazstudio.com/tallas' },
-  { label: 'Términos y condiciones', href: 'https://www.ampazstudio.com/terminos' },
-  { label: 'Política de privacidad', href: 'https://www.ampazstudio.com/privacidad' },
-  { label: 'Preguntas frecuentes', href: 'https://www.ampazstudio.com/faq' },
+  { label: 'Política de cambios', href: 'https://www.duochicstudio.com/cambios' },
+  { label: 'Guía de tallas', href: 'https://www.duochicstudio.com/tallas' },
+  { label: 'Términos y condiciones', href: 'https://www.duochicstudio.com/terminos' },
+  { label: 'Política de privacidad', href: 'https://www.duochicstudio.com/privacidad' },
+  { label: 'Preguntas frecuentes', href: 'https://www.duochicstudio.com/faq' },
 ]
 
 export default function Footer() {
@@ -47,14 +47,14 @@ export default function Footer() {
       <div className="max-w-3xl mx-auto px-6 py-14 flex flex-col items-center text-center">
 
         {/* Logo */}
-        <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-8 mb-4" style={{ filter: 'invert(1)' }} />
+        <img src="/logos/imagotico-duo-chic-studio.svg" alt="Duo Chic Studio" className="h-8 mb-4" style={{ filter: 'invert(1)' }} />
 
-        {/* PLACEHOLDER: describe acá a qué se dedica Ampaz Studio. */}
+        {/* PLACEHOLDER: describe acá a qué se dedica Duo Chic Studio. */}
         <p className="text-gray-600 text-sm leading-relaxed max-w-md">
-          Ampaz Studio.
+          Duo Chic Studio.
         </p>
 
-        {/* Redes — PLACEHOLDER: reemplazar los href por las redes/WhatsApp reales de Ampaz Studio. */}
+        {/* Redes — PLACEHOLDER: reemplazar los href por las redes/WhatsApp reales de Duo Chic Studio. */}
         <div className="flex items-center gap-2 mt-5">
           {REDES.map(({ icon: Icon, href, label }) => (
             <a
@@ -85,7 +85,7 @@ export default function Footer() {
           ))}
         </nav>
 
-        {/* Contacto — PLACEHOLDER: reemplazar teléfono/dirección por los reales de Ampaz Studio. */}
+        {/* Contacto — PLACEHOLDER: reemplazar teléfono/dirección por los reales de Duo Chic Studio. */}
         <div className="bg-aux px-6 py-4 mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
           <a
             href="https://wa.me/573000000000"
@@ -110,7 +110,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-gray-500">© 2026 Ampaz Studio. Todos los derechos reservados.</p>
+          <p className="text-xs text-gray-500">© 2026 Duo Chic Studio. Todos los derechos reservados.</p>
           <p className="text-xs text-gray-500">
             Desarrollado por{' '}
             <a href="https://brandingcol.com/" target="_blank" rel="noopener noreferrer"

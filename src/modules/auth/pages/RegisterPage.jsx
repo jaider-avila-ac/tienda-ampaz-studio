@@ -200,7 +200,7 @@ export default function RegisterPage() {
       {/* Panel lateral — PLACEHOLDER en degradado de marca, ver LoginPage.jsx */}
       <div className="flex-1 hidden md:flex items-center justify-center overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #7B5F30 0%, #B69A6A 100%)' }}>
-        <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-16" />
+        <img src="/logos/imagotico-duo-chic-studio.svg" alt="Duo Chic Studio" className="h-16" />
       </div>
 
       {/* Formulario */}
@@ -209,7 +209,7 @@ export default function RegisterPage() {
 
           {/* Logo */}
           <div className="flex justify-center mb-2">
-            <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-14" style={{ filter: 'invert(1)' }} />
+            <img src="/logos/imagotico-duo-chic-studio.svg" alt="Duo Chic Studio" className="h-14" style={{ filter: 'invert(1)' }} />
           </div>
 
           <h2 className="text-center text-2xl font-bold text-black">Crear cuenta</h2>
@@ -306,9 +306,9 @@ export default function RegisterPage() {
                 />
                 <span>
                   He leído y acepto los{' '}
-                  <a href="https://www.ampazstudio.com/terminos" target="_blank" rel="noopener noreferrer" className="font-bold text-black hover:underline">Términos de uso</a>
+                  <a href="https://www.duochicstudio.com/terminos" target="_blank" rel="noopener noreferrer" className="font-bold text-black hover:underline">Términos de uso</a>
                   {' '}y la{' '}
-                  <a href="https://www.ampazstudio.com/privacidad" target="_blank" rel="noopener noreferrer" className="font-bold text-black hover:underline">Política de privacidad</a>.
+                  <a href="https://www.duochicstudio.com/privacidad" target="_blank" rel="noopener noreferrer" className="font-bold text-black hover:underline">Política de privacidad</a>.
                 </span>
               </label>
               <label className="flex items-start gap-2.5 text-xs text-gray-500 leading-relaxed cursor-pointer">
@@ -318,7 +318,7 @@ export default function RegisterPage() {
                   onChange={(e) => setAceptaPromo(e.target.checked)}
                   className="mt-0.5 w-4 h-4 flex-shrink-0 accent-black"
                 />
-                <span>Quiero recibir ofertas y promociones de Ampaz Studio (puedes cambiarlo cuando quieras).</span>
+                <span>Quiero recibir ofertas y promociones de Duo Chic Studio (puedes cambiarlo cuando quieras).</span>
               </label>
             </div>
 

@@ -216,7 +216,7 @@ export default function CartPage() {
   }
 
   const waMessage = encodeURIComponent(
-    'Pedido Ampaz Studio\n\n' +
+    'Pedido Duo Chic Studio\n\n' +
     cart.map((i) => {
       const vars = Object.entries(i.variantes ?? {}).map(([k, v]) => `${k}: ${v}`).join(', ')
       return `• ${i.nombre}${vars ? ` (${vars})` : ''} ×${i.cantidad} → ${fmt(i.subtotal)}\n  ${siteOrigin()}/producto/${i.productId}`

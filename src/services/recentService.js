@@ -1,4 +1,4 @@
-const KEY = 'ampaz_studio_recientes'
+const KEY = 'duo_chic_studio_recientes'
 const MAX = 12
 
 function snapshot(product) {

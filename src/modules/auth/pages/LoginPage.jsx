@@ -13,9 +13,9 @@ function TermsText() {
   return (
     <p className="text-center text-xs text-gray-400 leading-relaxed">
       Al continuar aceptas los{' '}
-      <a href="https://www.ampazstudio.com/terminos" target="_blank" rel="noopener noreferrer" className="font-bold text-black hover:underline">Términos de uso</a>
+      <a href="https://www.duochicstudio.com/terminos" target="_blank" rel="noopener noreferrer" className="font-bold text-black hover:underline">Términos de uso</a>
       {' '}y la{' '}
-      <a href="https://www.ampazstudio.com/privacidad" target="_blank" rel="noopener noreferrer" className="font-bold text-black hover:underline">Política de privacidad</a>.
+      <a href="https://www.duochicstudio.com/privacidad" target="_blank" rel="noopener noreferrer" className="font-bold text-black hover:underline">Política de privacidad</a>.
     </p>
   )
 }
@@ -175,7 +175,7 @@ export default function LoginPage() {
           public/img/, vacía a propósito: no se inventó una foto de la tienda). */}
       <div className="flex-1 hidden md:flex items-center justify-center overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #7B5F30 0%, #B69A6A 100%)' }}>
-        <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-16" />
+        <img src="/logos/imagotico-duo-chic-studio.svg" alt="Duo Chic Studio" className="h-16" />
       </div>
 
       {/* Formulario */}
@@ -184,7 +184,7 @@ export default function LoginPage() {
 
           {/* Logo */}
           <Link to="/" className="flex justify-center">
-            <img src="/logos/imagotico-ampaz-studio.svg" alt="Ampaz Studio" className="h-14" style={{ filter: 'invert(1)' }} />
+            <img src="/logos/imagotico-duo-chic-studio.svg" alt="Duo Chic Studio" className="h-14" style={{ filter: 'invert(1)' }} />
           </Link>
 
           {/* Error */}

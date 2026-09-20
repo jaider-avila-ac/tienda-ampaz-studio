@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'ampaz-studio.google-auth-diagnostics.v1'
+const STORAGE_KEY = 'duo-chic-studio.google-auth-diagnostics.v1'
 const EVENT_NAME = 'google-auth:diagnostic'
 const MAX_EVENTS = 80
 

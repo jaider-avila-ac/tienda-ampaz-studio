@@ -3,9 +3,9 @@
 
 import { fetchAuth } from './api'
 
-const KEY          = 'ampaz_studio_stock'
-const KEY_VARIANTS = 'ampaz_studio_stock_variants' // productId -> nombre de la variante de stock
-const KEY_COMBO_DIMENSIONS = 'ampaz_studio_stock_combo_dimensions' // productId -> ["Talla", "Color"]
+const KEY          = 'duo_chic_studio_stock'
+const KEY_VARIANTS = 'duo_chic_studio_stock_variants' // productId -> nombre de la variante de stock
+const KEY_COMBO_DIMENSIONS = 'duo_chic_studio_stock_combo_dimensions' // productId -> ["Talla", "Color"]
 
 // Determina qué variante controla el stock para un producto dado.
 // Prioridad: talla > color con stock por opción > nivel de producto.

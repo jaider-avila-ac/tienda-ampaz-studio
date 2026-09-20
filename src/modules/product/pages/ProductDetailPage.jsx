@@ -65,10 +65,10 @@ function productSeoData(product, category, resenas) {
   const url = `${origin}/producto/${product.id}`
   const image = (product.imagenes ?? []).map((img) => absoluteUrl(img.url ?? img)).filter(Boolean)
   const basePrice = product.precioFinal ?? product.precio
-  const description = plainText(product.descripcion, `${product.nombre} en Ampaz Studio.`)
+  const description = plainText(product.descripcion, `${product.nombre} en Duo Chic Studio.`)
 
   return {
-    title: `${product.nombre} | Ampaz Studio`,
+    title: `${product.nombre} | Duo Chic Studio`,
     description,
     canonical: url,
     jsonLd: {
@@ -896,7 +896,7 @@ export default function ProductDetailPage() {
 
                     {p.esMia && editandoPregId !== p.id && (
                       <div className="flex gap-3 ml-10 mt-1">
-                        {/* Ya respondida: editar el texto original dejaría la respuesta de Ampaz Studio
+                        {/* Ya respondida: editar el texto original dejaría la respuesta de Duo Chic Studio
                             desalineada con la pregunta que la originó, así que se deja de ofrecer. */}
                         {!p.respuestaTexto && (
                           <button
@@ -917,7 +917,7 @@ export default function ProductDetailPage() {
 
                     {p.respuestaTexto ? (
                       <div className="ml-10 mt-2.5 pl-3 border-l-2 border-accent">
-                        <p className="text-[11px] font-bold text-black uppercase tracking-wide">Ampaz Studio responde</p>
+                        <p className="text-[11px] font-bold text-black uppercase tracking-wide">Duo Chic Studio responde</p>
                         <p className="text-sm text-gray-700 mt-0.5">{p.respuestaTexto}</p>
                       </div>
                     ) : (

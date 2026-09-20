@@ -11,7 +11,7 @@ export default function CheckoutLayout() {
             <Layers size={14} className="text-white" />
           </div>
           <div className="leading-none hidden sm:block">
-            <span className="font-black text-black text-sm">AMPAZ</span>
+            <span className="font-black text-black text-sm">DUO CHIC</span>
             <span className="font-black text-accent text-sm"> STUDIO</span>
           </div>
         </Link>
